@@ -9,6 +9,7 @@ passport.serializeUser((user, done) => {
   done(null, user.id)
 })
 
+// function to turn user id into a user
 passport.deserializeUser((id, done) => {
   User.findById(id)
     .then(user => done(null, user))
